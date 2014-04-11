@@ -13,7 +13,7 @@ class SignatureError(Exception):
 class MCAssoc(object):
 	def __init__(self, site_id, shared_secret, instance_secret, timestamp_leeway=300):
 		self.site_id = site_id
-		self.shared_secret = shared_secret
+		self.shared_secret = shared_secret.decode('hex')
 		self.instance_secret = instance_secret
 		self.timestamp_leeway = timestamp_leeway
 		self.insecure_mode = False
